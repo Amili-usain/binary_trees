@@ -51,7 +51,7 @@ typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 ```
 
-| File/Folder :File_folder:          | Description                |
+| File/Folder                  | Description                |
 | ---------------------------------- | ---------------------------|
 | [tests](./tests) | Folder of test files for all tasks
 | [binary_tree_print.c](./binary_tree_print.c) | <ul><li>Helper file provided for the project by alx</li><li>A function that prints binary trees in a pretty way.</li></ul> |
