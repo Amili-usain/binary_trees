@@ -1,50 +1,46 @@
 #include "binary_trees.h"
 
 /**
- * bst_in - checks if node is inserted
- * @tree: double pointer to the root node of the BST to insert the value.
- * @value: value stored in the node inserted
- * Return: pointer to the new node
- */
-bst_t *bst_in(bst_t **tree, int value)
-{
-	if (value < (*tree)->n)
-	{
-		if ((*tree)->left == NULL)
-		{
-			(*tree)->left = binary_tree_node(*tree, value);
-			return ((*tree)->left);
-		}
-		else
-			return (bst_in(&((*tree)->left), value));
-	}
-
-	if (value > (*tree)->n)
-	{
-		if ((*tree)->right == NULL)
-		{
-			(*tree)->right = binary_tree_node(*tree, value);
-			return ((*tree)->right);
-		}
-		else
-			return (bst_in(&((*tree)->right), value));
-	}
-
-	return (NULL);
-}
-/**
- * bst_insert - inserts a value in a Binary Search Tree
- * @tree: pointer to the root node of the bst. 
- * @value: node value
- * Return: pointer to the new node after insertion.
+ * bst_insert - Inserts a value in a Binary Search Tree.
+ * @tree: A double pointer to the root node of the BST to insert the value.
+ * @value: The value to store in the node to be inserted.
+ * Return: A pointer to the created node, or NULL on failure.
  */
 bst_t *bst_insert(bst_t **tree, int value)
 {
-	if (*tree == NULL)
-	{
-		*tree = binary_tree_node(NULL, value);
-		return (*tree);
-	}
+	bst_t *curr, *new;
 
-	return (bst_in(tree, value));
+	if (tree != NULL)
+	{
+		curr = *tree;
+
+		if (curr == NULL)
+		{
+			new = binary_tree_node(curr, value);
+			if (new == NULL)
+				return (NULL);
+			return (*tree = new);
+		}
+		if (value < curr->n) /* insert in left subtree */
+		{
+			if (curr->left != NULL)
+				return (bst_insert(&curr->left, value));
+
+			new = binary_tree_node(curr, value);
+			if (new == NULL)
+				return (NULL);
+			return (curr->left = new);
+		}
+		if (value > curr->n) /* insert in right subtree */
+		{
+			if (curr->right != NULL)
+				return (bst_insert(&curr->right, value));
+
+			new = binary_tree_node(curr, value);
+			if (new == NULL)
+				return (NULL);
+			return (curr->right = new);
+		}
+	}
+	return (NULL);
 }
