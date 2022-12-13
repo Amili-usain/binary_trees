@@ -96,7 +96,7 @@ typedef struct binary_tree_s heap_t;
 | [131-heap_insert.c](./131-heap_insert.c) | <ul><li>A function that inserts a value in Max Binary Heap</li><li>Returns pointer to the created node, or `NULL` on failure</li><li>Follows a `max Heap` ordering.</li></ul> |
 | [132-array_to_heap.c](./132-array_to_heap.c) | <ul><li>A function that builds a Max Binary Heap tree from an array</li><li>Returns pointer to the root node of the created Binary Heap, or NULL on failure</li></ul> |
 | [133-heap_extract.c](./133-heap_extract.c) | <ul><li>A function that extracts the root node of a Max Binary Heap</li><li>Returns the `value` stored in the root node and `0` on failure</li></ul> |
-| [134-heap_to_sorted_array.c](./134-heap_to_sorted_array.c) | |<ul><li>A function that converts a Binary Max Heap to a sorted array of integers</li><li>`size` is assumed a valid address</li><li>Returns  `array` sorted in `descending order`</li></ul> | 
+| [134-heap_to_sorted_array.c](./134-heap_to_sorted_array.c) | <ul><li>A function that converts a Binary Max Heap to a sorted array of integers</li><li>`size` is assumed a valid address</li><li>Returns  `array` sorted in `descending order`</li></ul> | 
 | [135-O](./135-O) | <ul><li>Text file containing the average time complexities of binary heap operations (one answer per line):</li><li>Inserting the value `n`.</li><li>Extracting the root node.</li><li>Searching for a node in a binary heap of size `n`.</li></ul> |
 
 ## Authors :black_nib:
